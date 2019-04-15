@@ -32,12 +32,35 @@ class TutorialHome extends StatelessWidget {
       ),
       //body占屏幕的大部分
       body: new Center(
-        child: new Text('Hello, world!'),
+        child: new MyButton(),
       ),
       floatingActionButton: new FloatingActionButton(
         tooltip: 'Add', // used by assistive technologies
         child: new Icon(Icons.add),
         onPressed: null,
+      ),
+    );
+  }
+}
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new GestureDetector(
+      onTap: () {
+        print('MyButton was tapped!');
+      },
+      child: new Container(
+        height: 36.0,
+        padding: const EdgeInsets.all(8.0),
+        margin: const EdgeInsets.symmetric(horizontal: 8.0),
+        decoration: new BoxDecoration(
+          borderRadius: new BorderRadius.circular(5.0),
+          color: Colors.lightGreen[500],
+        ),
+        child: new Center(
+          child: new Text('Engage'),
+        ),
       ),
     );
   }
