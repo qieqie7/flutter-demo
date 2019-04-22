@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// State 生命周期
 
-class LifeCycle extends StatelessWidget {
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
