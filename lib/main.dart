@@ -2,7 +2,8 @@ import 'package:flutter/widgets.dart';
 // import 'life_cycle.dart' show LifeCycle;
 // import 'state.dart';
 // import 'basic_widget.dart';
-import 'text.dart';
+// import 'text.dart';
+import 'button.dart';
 
 void main() => runApp(new MyApp());
 
