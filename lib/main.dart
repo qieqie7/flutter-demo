@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 // import 'state.dart';
 // import 'basic_widget.dart';
 // import 'text.dart';
-import 'button.dart';
+// import 'button.dart';
+import 'image.dart';
 
 void main() => runApp(new MyApp());
 
