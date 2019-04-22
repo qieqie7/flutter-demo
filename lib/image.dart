@@ -56,6 +56,14 @@ class Home extends StatelessWidget {
               Icons.fingerprint,
               color: Colors.blue,
             ),
+            Text(
+              '自定义Icon',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.blue,
+              ),
+            ),
+            // TODO: 下次在做了
           ],
         ),
       ),
