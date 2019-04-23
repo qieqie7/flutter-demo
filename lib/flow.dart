@@ -30,22 +30,23 @@ class TestFlowDelegate extends FlowDelegate {
   TestFlowDelegate({this.margin});
   @override
   void paintChildren(FlowPaintingContext context) {
-    var x = margin.left;
-    var y = margin.top;
+    double x = margin.left;
+    double y = margin.top;
     //计算每一个子widget的位置
-    // Odd number is on the left, even number is on the right.
+    // 楼梯形排列
     for(int i = 0; i < context.childCount; i++) {
-      print('i = $i');
       print(x);
-      print(y);
-      context.paintChild(i, transform: new Matrix4.translationValues(x, y, 0.0));
-      double w = context.getChildSize(i).width + x + margin.right + margin.left;
-      if(w < context.size.width) {
-        x = w;
+      print('-----');
+      double w = context.getChildSize(i).width + x + margin.right;
+      if(w <= context.size.width) {
+        context.paintChild(i, transform: new Matrix4.translationValues(x, y, 0.0));
+        x = w + margin.left;
       } else {
         x = margin.left;
+        context.paintChild(i, transform: new Matrix4.translationValues(x, y, 0.0));
+        x += context.getChildSize(i).width + margin.right + margin.left;
       }
-      y = context.getChildSize(i).height + y + margin.bottom + margin.top;
+      y += context.getChildSize(i).height + margin.top + margin.bottom;
     }
     
     // for (int i = 0; i < context.childCount; i++) {
