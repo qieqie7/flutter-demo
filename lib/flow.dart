@@ -34,8 +34,20 @@ class TestFlowDelegate extends FlowDelegate {
     var y = margin.top;
     //计算每一个子widget的位置
     // Odd number is on the left, even number is on the right.
-    // TODO: 先吃饭 晚上过来写了嗷
-
+    for(int i = 0; i < context.childCount; i++) {
+      print('i = $i');
+      print(x);
+      print(y);
+      context.paintChild(i, transform: new Matrix4.translationValues(x, y, 0.0));
+      double w = context.getChildSize(i).width + x + margin.right + margin.left;
+      if(w < context.size.width) {
+        x = w;
+      } else {
+        x = margin.left;
+      }
+      y = context.getChildSize(i).height + y + margin.bottom + margin.top;
+    }
+    
     // for (int i = 0; i < context.childCount; i++) {
     //   var w = context.getChildSize(i).width + x + margin.right;
     //   if (w < context.size.width) {
@@ -55,7 +67,7 @@ class TestFlowDelegate extends FlowDelegate {
 
   getSize(BoxConstraints constraints) {
     //指定Flow的大小
-    return Size(double.infinity, 200.0);
+    return Size(double.infinity, double.infinity);
   }
 
   @override
