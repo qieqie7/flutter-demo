@@ -6,7 +6,8 @@ import 'package:flutter/widgets.dart';
 // import 'button.dart';
 // import 'image.dart';
 // import 'switch.dart';
-import 'text_field.dart';
+// import 'text_field.dart';
+import 'flex.dart';
 
 void main() => runApp(new MyApp());
 
