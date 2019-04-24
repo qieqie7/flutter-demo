@@ -35,8 +35,6 @@ class TestFlowDelegate extends FlowDelegate {
     //计算每一个子widget的位置
     // 楼梯形排列
     for(int i = 0; i < context.childCount; i++) {
-      print(x);
-      print('-----');
       double w = context.getChildSize(i).width + x + margin.right;
       if(w <= context.size.width) {
         context.paintChild(i, transform: new Matrix4.translationValues(x, y, 0.0));
