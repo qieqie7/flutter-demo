@@ -1,16 +1,11 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class MySelect extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Switch & Checkbox',
-      home: new Scaffold(
-        appBar: AppBar(
-          title: Text('Switch & Checkbox'),
-        ),
-        body: new SwitchAndCheckboxTestRoute(),
-      ),
+    return Scaffold(
+      appBar: AppBar(title: Text('Switch & Checkbox')),
+      body: new SwitchAndCheckboxTestRoute(),
     );
   }
 }
@@ -31,17 +26,13 @@ class _SwitchAndCheckboxTestRoute extends State<SwitchAndCheckboxTestRoute> {
         Switch(
           value: _switchSelected,
           onChanged: (value) {
-            setState(() {
-              _switchSelected = value;
-            });
+            setState(() => _switchSelected = value);
           },
         ),
         Checkbox(
           value: _checkboxSelected,
           onChanged: (value) {
-            setState(() {
-              _checkboxSelected = value;
-            });
+            setState(() => _checkboxSelected = value);
           },
           activeColor: Colors.red,
         )

@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
 
 /// 状态管理
-
-class Home extends StatelessWidget {
+class MyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'state',
-      home: new Scaffold(
-        appBar: AppBar(
-          title: new Text('state'),
-        ),
-        body: new Column(
-          children: <Widget>[
-            new TapboxA(),
-            new TapboxA(),
-            new ParentWidget(),
-          ],
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: new Text('state'),
+      ),
+      body: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            '自身管理自身状态',
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 18
+            ),
+          ),
+          TapboxA(), 
+          TapboxA(),
+          Text(
+            '父Widget管理子Widget状态',
+            style: TextStyle(
+              color: Colors.red,
+              fontSize: 18
+            ),
+          ), 
+          ParentWidget()
+        ],
       ),
     );
   }
