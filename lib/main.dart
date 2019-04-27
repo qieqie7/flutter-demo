@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'basic_widget.dart';
 import 'life_cycle.dart';
 import 'state.dart';
@@ -8,15 +9,15 @@ import 'image.dart';
 import 'switch.dart';
 import 'text_field.dart';
 import 'row&column.dart';
-// import 'flex.dart';
-// import 'wrap.dart';
-// import 'flow.dart';
-// import 'stack.dart';
-// import 'padding.dart';
-// import 'constrained_box.dart';
-// import 'decorate_box.dart';
-// import 'transform.dart';
-// import 'container.dart';
+import 'flex.dart';
+import 'wrap.dart';
+import 'stack.dart';
+import 'padding.dart';
+import 'constrained_box.dart';
+import 'decorate_box.dart';
+import 'transform.dart';
+import 'container.dart';
+import 'scaffold_route.dart';
 // import 'single_child_scroll_view.dart';
 // import 'list_view.dart';
 
@@ -35,13 +36,11 @@ class MyApp extends StatelessWidget {
 /// * 必须使用不含有 MaterialApp 实例的上下午
 /// * 才能实现路由导航
 /// **************************************************
-class MyHome extends StatelessWidget {
+class MyHome extends StatelessWidget {//需要定义一个Controller
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Flutter 实战'),
-      ),
+      appBar: AppBar(title: Text('Flutter 实战')),
       body: ListView(
         children: <Widget>[
           ListTile(
@@ -113,6 +112,78 @@ class MyHome extends StatelessWidget {
             onTap: () {
               Navigator.of(context).push(
                 new MaterialPageRoute(builder: (context) => RowAndColumn())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Flex', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyFlex())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('流式布局Wrap Flow', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => WrapAndFlow())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Stack', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyStack())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Padding', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyPadding())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('布局限制类容器ContrainedBox', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyConstrainedBox())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('装饰容器DecoratedBox', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyDecoratedBox())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Transform变换', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyTransform())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Container', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => MyContainer())
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Scaffold、TabBar、底部导航', style: TextStyle(color: Colors.blue)),
+            onTap: () {
+              Navigator.of(context).push(
+                new MaterialPageRoute(builder: (context) => ScaffoldRoute())
               );
             },
           ),

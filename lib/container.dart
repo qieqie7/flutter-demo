@@ -3,22 +3,17 @@ import 'package:flutter/material.dart';
 /// 它是DecoratedBox、ConstrainedBox、Transform、Padding、Align等widget的一个组合widget。
 /// 所以我们只需通过一个Container可以实现同时需要装饰、变换、限制的场景。
 
-class Home extends StatelessWidget {
+class MyContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Container',
-      home: new Scaffold(
-        appBar: AppBar(
-          title: Text('Container'),
-        ),
-        body: new MyContainer(),
-      ),
+    return Scaffold(
+      appBar: AppBar(title: Text('Container')),
+      body: new _MyContainer(),
     );
   }
 }
 
-class MyContainer extends StatelessWidget {
+class _MyContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(

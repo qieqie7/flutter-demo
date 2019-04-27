@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+class MyFlow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Wrap & Flow',
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: Text('Wrap & Flow'),
-        ),
-        body: Flow(
-          delegate: TestFlowDelegate(margin: EdgeInsets.all(10.0)),
-          children: <Widget>[
-            new Container(width: 80.0,height: 80.0,color: Colors.red,),
-            new Container(width: 80.0,height: 80.0,color: Colors.green,),
-            new Container(width: 80.0,height: 80.0,color: Colors.blue,),
-            new Container(width: 80.0,height: 80.0,color: Colors.yellow,),
-            new Container(width: 80.0,height: 80.0,color: Colors.brown,),
-            new Container(width: 80.0,height: 80.0,color: Colors.purple,),
-          ],
-        ),
+    return new Scaffold(
+      appBar: new AppBar(title: Text('Flow')),
+      body: Flow(
+        delegate: TestFlowDelegate(margin: EdgeInsets.all(10.0)),
+        children: <Widget>[
+          new Container(width: 80.0,height: 80.0,color: Colors.red,),
+          new Container(width: 80.0,height: 80.0,color: Colors.green,),
+          new Container(width: 80.0,height: 80.0,color: Colors.blue,),
+          new Container(width: 80.0,height: 80.0,color: Colors.yellow,),
+          new Container(width: 80.0,height: 80.0,color: Colors.brown,),
+          new Container(width: 80.0,height: 80.0,color: Colors.purple,),
+        ],
       ),
     );
   }
