@@ -27,6 +27,7 @@ import 'scroll_listener.dart';
 import 'will_pop_scope.dart';
 import 'inherited_widget.dart';
 import 'theme.dart';
+import 'pointer.dart';
 
 void main() => runApp(new MyApp());
 
@@ -254,6 +255,14 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ThemeTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('Pointer事件处理',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => MyPointer()));
               },
             ),
           ],
