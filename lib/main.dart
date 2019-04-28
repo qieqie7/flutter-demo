@@ -24,6 +24,9 @@ import 'my_grid_view.dart';
 import 'custom_scroll_view_test_route.dart';
 import 'scroll_controller.dart';
 import 'scroll_listener.dart';
+import 'will_pop_scope.dart';
+import 'inherited_widget.dart';
+import 'theme.dart';
 
 void main() => runApp(new MyApp());
 
@@ -227,6 +230,30 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ScrollNotificationTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('导航返回拦截 WillPopScope',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => WillPopScopeTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('数据共享 InheritedWidget',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => InheritedWidgetTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('主题-Theme',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => ThemeTestRoute()));
               },
             ),
           ],
