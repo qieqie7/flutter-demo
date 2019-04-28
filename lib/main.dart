@@ -23,6 +23,7 @@ import 'list_view.dart';
 import 'my_grid_view.dart';
 import 'custom_scroll_view_test_route.dart';
 import 'scroll_controller.dart';
+import 'scroll_listener.dart';
 
 void main() => runApp(new MyApp());
 
@@ -218,6 +219,14 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ScrollControllerTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('滚动监听',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => ScrollNotificationTestRoute()));
               },
             ),
           ],
