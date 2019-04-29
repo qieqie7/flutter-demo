@@ -27,6 +27,7 @@ import 'scroll_listener.dart';
 import 'will_pop_scope.dart';
 import 'inherited_widget.dart';
 import 'theme.dart';
+import 'gesture_detector.dart';
 
 void main() => runApp(new MyApp());
 
@@ -254,6 +255,15 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ThemeTestRoute()));
+              },
+            ),
+
+            ListTile(
+              title: Text('手势识别GestureDetector',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => GestureDetectorTestRoute()));
               },
             ),
           ],
