@@ -28,6 +28,8 @@ import 'will_pop_scope.dart';
 import 'inherited_widget.dart';
 import 'theme.dart';
 import 'gesture_detector.dart';
+import 'animation.dart';
+import 'hero_animation.dart';
 
 void main() => runApp(new MyApp());
 
@@ -264,6 +266,23 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => GestureDetectorTestRoute()));
+              },
+            ),
+
+            ListTile(
+              title: Text('动画结构',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => ScaleAnimationRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('Hero动画',
+                  style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => HeroAnimationRoute()));
               },
             ),
           ],
