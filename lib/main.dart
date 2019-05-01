@@ -28,6 +28,9 @@ import 'will_pop_scope.dart';
 import 'inherited_widget.dart';
 import 'theme.dart';
 import 'pointer.dart';
+import 'gesture_detector.dart';
+import 'animation.dart';
+import 'hero_animation.dart';
 
 void main() => runApp(new MyApp());
 
@@ -51,7 +54,8 @@ class MyHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Flutter 实战')),
-      body: Scrollbar( // 滚动条
+      body: Scrollbar(
+        // 滚动条
         child: ListView(
           children: <Widget>[
             ListTile(
@@ -189,24 +193,22 @@ class MyHome extends StatelessWidget {
               title: Text('SingleChildScrollView',
                   style: TextStyle(color: Colors.blue)),
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (context) => SCSV()));
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) => SCSV()));
               },
             ),
             ListTile(
-              title: Text('ListView',
-                  style: TextStyle(color: Colors.blue)),
+              title: Text('ListView', style: TextStyle(color: Colors.blue)),
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (context) => MyListView()));
+                Navigator.of(context).push(
+                    new MaterialPageRoute(builder: (context) => MyListView()));
               },
             ),
             ListTile(
-              title: Text('GridView',
-                  style: TextStyle(color: Colors.blue)),
+              title: Text('GridView', style: TextStyle(color: Colors.blue)),
               onTap: () {
-                Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (context) => MyGridView()));
+                Navigator.of(context).push(
+                    new MaterialPageRoute(builder: (context) => MyGridView()));
               },
             ),
             ListTile(
@@ -218,16 +220,14 @@ class MyHome extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('滚动监听及控制',
-                  style: TextStyle(color: Colors.blue)),
+              title: Text('滚动监听及控制', style: TextStyle(color: Colors.blue)),
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ScrollControllerTestRoute()));
               },
             ),
             ListTile(
-              title: Text('滚动监听',
-                  style: TextStyle(color: Colors.blue)),
+              title: Text('滚动监听', style: TextStyle(color: Colors.blue)),
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ScrollNotificationTestRoute()));
@@ -250,19 +250,39 @@ class MyHome extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text('主题-Theme',
-                  style: TextStyle(color: Colors.blue)),
+              title: Text('主题-Theme', style: TextStyle(color: Colors.blue)),
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => ThemeTestRoute()));
               },
             ),
             ListTile(
-              title: Text('Pointer事件处理',
+                title:
+                    Text('Pointer事件处理', style: TextStyle(color: Colors.blue)),
+                onTap: () {
+                  Navigator.of(context).push(
+                      new MaterialPageRoute(builder: (context) => MyPointer()));
+                }),
+            ListTile(
+              title: Text('手势识别GestureDetector',
                   style: TextStyle(color: Colors.blue)),
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (context) => MyPointer()));
+                    builder: (context) => GestureDetectorTestRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('动画结构', style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => ScaleAnimationRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('Hero动画', style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => HeroAnimationRoute()));
               },
             ),
           ],
