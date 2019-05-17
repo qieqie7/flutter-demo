@@ -32,6 +32,7 @@ import 'gesture_detector.dart';
 import 'animation.dart';
 import 'hero_animation.dart';
 import 'staggered_animation.dart';
+import 'compose_widget.dart';
 
 void main() => runApp(new MyApp());
 
@@ -297,7 +298,7 @@ class MyHome extends StatelessWidget {
               title: Text(' 通过组合现有Widget实现自定义Widget', style: TextStyle(color: Colors.blue)),
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
-                    builder: (context) => HeroAnimationRoute()));
+                    builder: (context) => GradientButtonRoute()));
               },
             ),           
           ],
