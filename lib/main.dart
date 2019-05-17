@@ -31,6 +31,7 @@ import 'pointer.dart';
 import 'gesture_detector.dart';
 import 'animation.dart';
 import 'hero_animation.dart';
+import 'staggered_animation.dart';
 
 void main() => runApp(new MyApp());
 
@@ -283,6 +284,13 @@ class MyHome extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(new MaterialPageRoute(
                     builder: (context) => HeroAnimationRoute()));
+              },
+            ),
+            ListTile(
+              title: Text('交错动画', style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => StaggerDemo()));
               },
             ),
           ],
