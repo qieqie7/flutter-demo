@@ -293,6 +293,13 @@ class MyHome extends StatelessWidget {
                     builder: (context) => StaggerDemo()));
               },
             ),
+            ListTile(
+              title: Text(' 通过组合现有Widget实现自定义Widget', style: TextStyle(color: Colors.blue)),
+              onTap: () {
+                Navigator.of(context).push(new MaterialPageRoute(
+                    builder: (context) => HeroAnimationRoute()));
+              },
+            ),           
           ],
         ),
       ),
